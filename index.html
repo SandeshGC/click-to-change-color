@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		COLOR
+	</title>
+	<style type="text/css">
+		.colored-area{
+			height:500;
+			padding: 50px;
+			text-align: center;
+			font-size: 100px;
+		}
+		#dontTouchMe,#changemycolor{
+		
+			border: 5px solid black	;
+			font-size: 50px;
+			height: 100px;
+			width: 500px;
+			text-align:center;
+			
+			margin-left: auto;
+			margin-right:auto;
+		}	
+		p{
+			text-align: center;
+			font-size:30px	;
+		}
+	</style>
+</head>
+<body>
+	<p>Change the color by clicking the colored area or "Change color" button below it :)</p>
+	<div class= "colored-area" id="change" style="background-color:red;" onclick="changingColor(this)">
+		Click me to change the color
+	</div>
+	<br>
+	<div align="center" class="buttons">
+	<input type="submit" id="changemycolor" value="Change color" onclick="changeColorByButton()">
+	<br>
+	<input type="submit" id="dontTouchMe" value="Don't touch me >:[(" onclick ="message()">
+	</div>
+	<script type="text/javascript">
+		/*this code changes the color of the area by clicking the area*/
+
+		function changingColor(element){
+
+			var colornow = element.style.backgroundColor;
+			if (colornow == "red"){
+				element.style.backgroundColor= "green";
+				document.getElementById("change").innerHTML = "I am green";
+			}
+			else{
+				element.style.backgroundColor= "red";
+				document.getElementById("change").innerHTML = "I am red";
+			}
+		}
+
+		/*This code changes the color of the area by clicking the button*/
+		function changeColorByButton(){
+			var color = document.getElementById("change").style.backgroundColor;
+			element=document.getElementById("change");
+			if (color== "red"){
+				element.style.backgroundColor="green";
+				element.innerHTML="I am green now.";
+			}
+			else{
+				element.style.backgroundColor="red";
+				element.innerHTML="You made me blush. &deg;//&omega;//&deg;";
+			}
+		}
+		/*The almighty "Don't Touch Me" button*/
+		function message(){
+			alert("Hey, Don't touch me!");
+		}
+	</script>
+</body>
+</html>
